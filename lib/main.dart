@@ -133,6 +133,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Welcome to Flutter',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          backgroundColor:  Colors.pink,
+          foregroundColor: Colors.black,
+        ),
+      ),
       home: RandomWords(
           // appBar: AppBar(
           //   title: const Text('Welcome to Flutter'),
