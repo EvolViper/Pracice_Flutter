@@ -28,12 +28,37 @@ class HorizonsApp extends StatelessWidget {
         body: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
-              title: Text('Sliver App Bar'),
               backgroundColor: Colors.deepPurpleAccent,
               pinned: true, // khi kéo xuống thì phần appbar sẽ ko bị mất
               // expandedHeight: 100.0,
               // floating: true, // kéo xuống thì mất khi kéo lên từ từ thì app bar sẽ hiện lên.
               // snap: true,
+              stretch: true,
+              onStretchTrigger: () async {
+                print('Load New Data');
+              },
+              flexibleSpace: FlexibleSpaceBar(
+                stretchModes: <StretchMode>[
+                  StretchMode.zoomBackground, // zoom hình (kéo xuống)
+                  StretchMode.fadeTitle, // làm mất tiêu đề
+                  StretchMode.blurBackground,// làm mờ hình ảnh
+                ],
+                title: Text('Sliver App Bar'),
+                background: DecoratedBox(
+                  position: DecorationPosition.foreground,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.center,
+                      colors: <Color>[Colors.yellow, Colors.transparent],
+                    ),
+                  ),
+                  child: Image.network(
+                    headerImage,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
             ),
             WeeklyForecastList(),
           ],
