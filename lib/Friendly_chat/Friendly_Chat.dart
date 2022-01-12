@@ -28,8 +28,8 @@ class FriendlyChat extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Friendly Chat',
       theme: defaultTargetPlatform == TargetPlatform.android
-          ? kIOSTheme
-          : kDefaultTheme,
+          ? kDefaultTheme
+          : kIOSTheme,
       home: const ChatScreen(),
     );
   }
