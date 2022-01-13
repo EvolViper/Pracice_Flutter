@@ -20,10 +20,19 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         BlueBox(),
         BlueBox(),
         BlueBox(),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            BlueBox(),
+            BlueBox(),
+            BlueBox(),
+          ],
+        ),
       ],
     );
   }
