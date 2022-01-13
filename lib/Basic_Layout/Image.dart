@@ -19,10 +19,12 @@ class MyWidget extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image.asset('assets/images/anh-troll-4.jpg',width: 100,),
+        Spacer(flex: 1,),
+        Image.network('https://raw.githubusercontent.com/flutter/website/master/examples/layout/sizing/images/pic1.jpg'),
       ],
     );
   }
